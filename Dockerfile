@@ -13,7 +13,7 @@ CMD ["--host=0.0.0.0"]
 FROM php:7.4-fpm-alpine
 WORKDIR /var/www
 RUN rm -rf /var/wwww/html
-COPY --from=build /var/www/laravel/ .
+COPY --from=builder /var/www/laravel/ .
 RUN ln -s public html
 RUN chown -R www-data:www-data /var/www
 EXPOSE 9000
